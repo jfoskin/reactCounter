@@ -7,6 +7,6 @@ interface ButtonProps {
 
 export default function Button({buttonName, onCountChange}:ButtonProps) {
   return (
-    <button onClick={()=> onCountChange}>{buttonName}</button>
+    <button onClick={onCountChange}>{buttonName}</button>
   )
 }
