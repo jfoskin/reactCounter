@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import Button from './Button'
 
 export default function Counter() {
@@ -6,16 +6,21 @@ export default function Counter() {
     const [count, setCount] = useState<number>(0)
 
   const handleIncrement = ()=>{
-    setCount(count+1)
+    setCount(prev => prev+1)
   }
   
   const handleDecrement = ()=>{
-      setCount(count-1)
+      setCount(prev => prev-1)
     }
 
     const handleReset = ()=>{
       setCount(0)
     }
+
+    useEffect(()=>{
+
+
+    }, [count])
 
   return (
 
