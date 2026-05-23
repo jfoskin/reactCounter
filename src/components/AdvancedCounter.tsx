@@ -18,8 +18,7 @@ export default function AdvancedCounter() {
     }
 
     useEffect(()=>{
-
-
+       localStorage.setItem('count', String(count))
     }, [count])
 
   return (
