@@ -17,6 +17,16 @@ export default function AdvancedCounter() {
       setCount(0)
     }
 
+    const handleKeyDown = (event) => {
+      event.preventDefault();
+      if (event.key === 'ArrowUp' ) {
+        handleIncrement();
+      }
+       if (event.key === 'ArrowDown') {
+        handleDecrement();
+      }
+    }
+    
     useEffect(()=>{
       const storedCountArr = []
       storedCountArr.push(count)
