@@ -18,7 +18,10 @@ export default function AdvancedCounter() {
     }
 
     useEffect(()=>{
-       localStorage.setItem('count', String(count))
+      const storedCountArr = []
+      storedCountArr.push(count)
+      const storedCount = JSON.stringify(storedCountArr)
+       localStorage.setItem('count', storedCount)
     }, [count])
 
   return (
@@ -32,7 +35,8 @@ export default function AdvancedCounter() {
 
 
     <input id="stepInput" min="1" type="number" />
-<p>Count history</p>
+    <p>Count history</p>
+      {localStorage.getItem('count') && <p>{localStorage.getItem('count')}</p>}
     
     </>
   )
